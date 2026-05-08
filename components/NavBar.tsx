@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const items = [
-  { href: '/journey', label: 'Journey' },
-  { href: '/story', label: 'Story' },
+  { href: '/journey', label: 'Today' },
   { href: '/malawi', label: 'Malawi' },
+  { href: '/story', label: 'Yellow' },
 ];
 
 export function NavBar() {

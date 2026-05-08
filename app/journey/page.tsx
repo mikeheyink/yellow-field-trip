@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { journey, tripDate } from '@/content/journey';
-import { chapterBySlug } from '@/content/chapters';
 import { customerBySlug } from '@/content/customers';
 import { agentBySlug } from '@/content/agents';
 import { warehouse } from '@/content/warehouse';
@@ -24,7 +23,7 @@ export default function JourneyIndex() {
           journey.
         </h1>
         <p className="mt-3 max-w-prose text-muted">
-          Six stops, two clusters, and the Yellow story told a chapter at a time.
+          Six stops across two clusters — a warehouse, two agents, and five customers.
         </p>
       </header>
 
@@ -55,50 +54,7 @@ export default function JourneyIndex() {
               </li>
             );
           }
-          if (item.kind === 'chapter') {
-            const chapter = chapterBySlug(item.slug);
-            if (!chapter) return null;
-            const isAcumen = chapter.slug === 'acumen-steps-in';
-            return (
-              <li key={i}>
-                <Link
-                  href={`/story/${chapter.slug}`}
-                  className={`group block overflow-hidden rounded-2xl border transition-colors ${
-                    isAcumen
-                      ? 'border-ink bg-ink text-paper'
-                      : 'border-rule bg-white hover:border-ink'
-                  }`}
-                >
-                  <div className="flex items-stretch gap-0">
-                    <div
-                      className={`flex w-14 flex-col items-center justify-center ${
-                        isAcumen ? 'bg-yellow text-ink' : 'bg-paper text-ink'
-                      }`}
-                    >
-                      <span className="font-mono text-[10px] uppercase tracking-wider">
-                        Ch
-                      </span>
-                      <span className="font-display text-xl">
-                        {chapter.number}
-                      </span>
-                    </div>
-                    <div className="flex-1 px-4 py-4">
-                      <p className="font-display text-lg leading-snug">
-                        {chapter.title}
-                      </p>
-                      <p
-                        className={`mt-1 text-sm ${
-                          isAcumen ? 'text-paper/70' : 'text-muted'
-                        }`}
-                      >
-                        {chapter.hero.statLabel ?? chapter.hero.stat}
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </li>
-            );
-          }
+          if (item.kind === 'chapter') return null;
 
           const stopMeta = stopMetaFor(item.slug);
           return (
