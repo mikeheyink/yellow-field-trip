@@ -4,7 +4,6 @@ import { journey, tripDate } from '@/content/journey';
 import { customerBySlug } from '@/content/customers';
 import { agentBySlug } from '@/content/agents';
 import { warehouse } from '@/content/warehouse';
-import { JourneyMap } from '@/components/JourneyMap';
 import { Chevrons } from '@/components/Motifs';
 
 export default function JourneyIndex() {
@@ -23,28 +22,34 @@ export default function JourneyIndex() {
           journey.
         </h1>
         <p className="mt-3 max-w-prose text-muted">
-          Six stops across two clusters — a warehouse, two agents, and five customers.
+          Today we will meet two Yellow agents, five of their customers — after a visit to Yellow&apos;s Warehouse.
         </p>
       </header>
 
-      <JourneyMap />
-
-      <div className="mt-10 flex items-center gap-3">
-        <span className="h-px flex-1 bg-rule" />
-        <span className="text-[11px] uppercase tracking-[0.25em] text-muted">
-          The day in order
-        </span>
-        <span className="h-px flex-1 bg-rule" />
-      </div>
-
       <ol className="mt-6 space-y-3">
         {journey.map((item, i) => {
+          if (item.kind === 'chapter') return null;
+
           if (item.kind === 'inter') {
+            const isDrive = item.title.toLowerCase().includes('drive') ||
+              item.title.toLowerCase().includes('back to') ||
+              item.title.toLowerCase().includes('lunch');
+            if (isDrive) {
+              return (
+                <li key={i} className="flex items-center gap-3 py-2 px-1">
+                  <span className="font-mono text-[11px] text-muted shrink-0 w-10">
+                    {item.time ?? ''}
+                  </span>
+                  <span className="h-px flex-1 bg-rule" style={{ backgroundImage: 'repeating-linear-gradient(to right, #d4d4cc 0, #d4d4cc 4px, transparent 4px, transparent 8px)', backgroundColor: 'transparent' }} />
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-muted/70 shrink-0">
+                    {item.title}
+                  </span>
+                  <span className="h-px flex-1 bg-rule" style={{ backgroundImage: 'repeating-linear-gradient(to right, #d4d4cc 0, #d4d4cc 4px, transparent 4px, transparent 8px)', backgroundColor: 'transparent' }} />
+                </li>
+              );
+            }
             return (
-              <li
-                key={i}
-                className="flex items-center gap-3 px-1 py-1 text-sm text-muted"
-              >
+              <li key={i} className="flex items-center gap-3 px-1 py-1 text-sm text-muted">
                 {item.time && (
                   <span className="font-mono text-[11px]">{item.time}</span>
                 )}
@@ -54,9 +59,9 @@ export default function JourneyIndex() {
               </li>
             );
           }
-          if (item.kind === 'chapter') return null;
 
           const stopMeta = stopMetaFor(item.slug);
+          const badge = badgeFor(item.slug);
           return (
             <li key={i}>
               <Link
@@ -79,16 +84,19 @@ export default function JourneyIndex() {
                   )}
                 </div>
                 <div className="flex flex-1 flex-col justify-center py-3 pr-4">
-                  <div className="flex items-baseline gap-3">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] uppercase tracking-[0.15em] font-medium ${badge.classes}`}>
+                      {badge.label}
+                    </span>
                     {item.time && (
                       <span className="font-mono text-[11px] text-muted">
                         {item.time}
                       </span>
                     )}
-                    <p className="font-display text-lg">{item.title}</p>
                   </div>
+                  <p className="font-display text-lg leading-tight">{item.title}</p>
                   {item.subtitle && (
-                    <p className="mt-1 text-sm text-muted">{item.subtitle}</p>
+                    <p className="mt-0.5 text-sm text-muted">{item.subtitle.split(' · ')[1]}</p>
                   )}
                 </div>
               </Link>
@@ -117,6 +125,14 @@ export default function JourneyIndex() {
       </div>
     </div>
   );
+}
+
+function badgeFor(slug: string): { label: string; classes: string } {
+  if (slug === 'warehouse')
+    return { label: 'Warehouse', classes: 'bg-ink text-paper' };
+  if (slug.startsWith('agent-'))
+    return { label: 'Agent', classes: 'bg-yellow text-ink' };
+  return { label: 'Customer', classes: 'bg-rule text-muted' };
 }
 
 function stopMetaFor(slug: string): { photo?: string; initial: string } {
