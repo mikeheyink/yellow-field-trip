@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npx next *)",
+      "Bash(cp raw/trip_p04_2.png warehouse-team.png)",
+      "Bash(cp raw/trip_p05_2.png customer-typical-1.png)",
+      "Bash(cp raw/trip_p05_3.png customer-typical-2.png)",
+      "Bash(cp raw/trip_p05_4.png customer-typical-3.png)",
+      "Bash(cp raw/trip_p07_2.png agent-stanford.png)"
+    ]
+  }
+}
