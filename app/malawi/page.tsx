@@ -1,69 +1,144 @@
+import Image from 'next/image';
 import { malawi } from '@/content/malawi';
 import { Chevrons } from '@/components/Motifs';
 
 export default function MalawiPage() {
   return (
     <div className="fade-in">
-      <header className="mb-8">
-        <div className="flex items-center gap-3">
-          <Chevrons className="h-4 w-16" tone="ink" />
-          <p className="text-[11px] uppercase tracking-[0.25em] text-muted">
-            Context
-          </p>
-        </div>
-        <h1 className="mt-3 font-display text-[2.4rem] leading-[1.05]">
-          Malawi.
-        </h1>
-        <p className="mt-3 font-display text-xl leading-snug text-ink/70">
-          {malawi.headline}
-        </p>
-      </header>
-
-      <p className="text-body leading-relaxed">{malawi.intro}</p>
-
-      {/* Fast facts grid */}
-      <div className="mt-8 overflow-hidden rounded-3xl bg-ink p-6 text-paper">
-        <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-yellow">
-          Fast facts
-        </p>
-        <dl className="mt-4 grid grid-cols-2 gap-x-6 gap-y-4">
-          {malawi.fastFacts.map((f) => (
-            <div key={f.label}>
-              <dt className="text-[10px] uppercase tracking-[0.2em] text-paper/50">
-                {f.label}
-              </dt>
-              <dd className="mt-0.5 font-display text-lg leading-snug text-paper">
-                {f.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-
-      {/* Story sections */}
-      <div className="mt-10 space-y-10">
-        {malawi.sections.map((s) => (
-          <section key={s.label}>
-            <div className="flex items-center gap-2">
-              <Chevrons className="h-3 w-10" tone="ink" />
-              <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted">
-                {s.label}
+      {/* Full-bleed hero — Lake Malawi from space */}
+      <div className="-mx-5 -mt-4 mb-6">
+        <div className="relative aspect-[4/5] w-full overflow-hidden bg-ink">
+          <Image
+            src={malawi.hero.src}
+            alt={malawi.hero.alt}
+            fill
+            sizes="(max-width: 480px) 100vw, 480px"
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 via-ink/30 to-transparent p-5 pt-20">
+            <div className="flex items-center gap-3">
+              <Chevrons className="h-3 w-12" tone="yellow" />
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-yellow">
+                Context
               </p>
             </div>
-            <h2 className="mt-2 font-display text-2xl leading-snug">{s.title}</h2>
-            <div className="mt-3 space-y-3">
-              {s.body.map((p, i) => (
-                <p key={i} className="text-body leading-relaxed text-ink/90">
-                  {p}
-                </p>
-              ))}
-            </div>
-          </section>
-        ))}
+            <h1 className="mt-2 font-display text-[2.6rem] leading-[1.0] text-paper">
+              Malawi.
+            </h1>
+            <p className="mt-2 font-display text-lg leading-snug text-paper/85">
+              {malawi.headline}
+            </p>
+          </div>
+        </div>
+        <p className="px-5 pt-2 text-[10px] text-muted">
+          {malawi.hero.credit}
+        </p>
+      </div>
+
+      {/* Intro */}
+      <p className="text-body leading-relaxed text-ink/90">{malawi.intro}</p>
+
+      {/* Sections */}
+      <div className="mt-12 space-y-16">
+        {malawi.sections.map((s) => {
+          // §06 Today gets a stats grid before the body prose
+          const isTodaySection = s.number === '06';
+          // §05 gets full-bleed image
+          const fullBleed = s.image?.fullBleed;
+
+          return (
+            <section key={s.number}>
+              {/* Section head */}
+              <div className="flex items-baseline gap-3">
+                <span className="font-mono text-[11px] tracking-[0.2em] text-muted">
+                  {s.number}
+                </span>
+                <span className="h-px flex-1 bg-rule" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-muted">
+                  {s.kicker}
+                </span>
+              </div>
+
+              <h2 className="mt-3 font-display text-[1.9rem] leading-[1.1]">
+                {s.title}
+              </h2>
+
+              {/* Full-bleed image (Gule Wamkulu) */}
+              {fullBleed && s.image && (
+                <figure className="-mx-5 mt-5">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-paper">
+                    <Image
+                      src={s.image.src}
+                      alt={s.image.alt}
+                      fill
+                      sizes="(max-width: 480px) 100vw, 480px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="px-5 pt-2 text-[10px] text-muted">
+                    {s.image.credit}
+                  </figcaption>
+                </figure>
+              )}
+
+              {/* Body */}
+              <div className="mt-5 space-y-3 text-body leading-relaxed text-ink/90">
+                {s.body.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </div>
+
+              {/* Stats grid for §06 */}
+              {isTodaySection && (
+                <div className="mt-6 overflow-hidden rounded-2xl bg-ink p-5 text-paper">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-yellow">
+                    1990 → today
+                  </p>
+                  <dl className="mt-4 grid grid-cols-2 gap-x-5 gap-y-5">
+                    {malawi.stats.map((st) => (
+                      <div key={st.label}>
+                        <dt className="text-[10px] uppercase tracking-[0.18em] text-paper/50">
+                          {st.label}
+                        </dt>
+                        <dd className="mt-1 flex items-baseline gap-2">
+                          <span className="text-paper/40 line-through font-display text-sm">
+                            {st.from}
+                          </span>
+                          <span className="font-display text-2xl leading-none text-yellow">
+                            {st.to}
+                          </span>
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              )}
+
+              {/* Inset image (everything except full-bleed) */}
+              {!fullBleed && s.image && (
+                <figure className="mt-6">
+                  <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-paper ring-1 ring-rule">
+                    <Image
+                      src={s.image.src}
+                      alt={s.image.alt}
+                      fill
+                      sizes="(max-width: 480px) 100vw, 480px"
+                      className="object-cover"
+                    />
+                  </div>
+                  <figcaption className="pt-2 text-[10px] text-muted">
+                    {s.image.credit}
+                  </figcaption>
+                </figure>
+              )}
+            </section>
+          );
+        })}
       </div>
 
       {/* Bottom spacer for nav */}
-      <div className="h-8" />
+      <div className="h-12" />
     </div>
   );
 }

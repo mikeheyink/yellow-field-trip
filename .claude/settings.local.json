@@ -7,7 +7,29 @@
       "Bash(cp raw/trip_p05_2.png customer-typical-1.png)",
       "Bash(cp raw/trip_p05_3.png customer-typical-2.png)",
       "Bash(cp raw/trip_p05_4.png customer-typical-3.png)",
-      "Bash(cp raw/trip_p07_2.png agent-stanford.png)"
+      "Bash(cp raw/trip_p07_2.png agent-stanford.png)",
+      "WebSearch",
+      "WebFetch(domain:ourworldindata.org)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "Bash(mkdir -p public/images/malawi)",
+      "Bash(curl -sL -o lake-from-space.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Lake_Malawi_seen_from_orbit.jpg/1024px-Lake_Malawi_seen_from_orbit.jpg\")",
+      "Bash(curl -sL -o rift-diagram.png \"https://upload.wikimedia.org/wikipedia/commons/c/c0/Tectonical_map_of_East_Africa.png\")",
+      "Bash(curl -sL -o hominid-fossil.jpg \"https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Homo_rudolfensis-KNM_ER_1470.jpg/800px-Homo_rudolfensis-KNM_ER_1470.jpg\")",
+      "Bash(curl -sL -o bantu-expansion.png \"https://upload.wikimedia.org/wikipedia/commons/d/d6/Bantu_Phillipson.png\")",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o lake-from-space.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Lake_Malawi_seen_from_orbit.jpg/1024px-Lake_Malawi_seen_from_orbit.jpg)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o hominid-fossil.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Homo_rudolfensis-KNM_ER_1470.jpg/800px-Homo_rudolfensis-KNM_ER_1470.jpg)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o bantu-expansion.png https://upload.wikimedia.org/wikipedia/commons/d/d6/Bantu_Phillipson.png)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o maravi-empire.png https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Maravi_Kingdom_map_c._1650s.svg/900px-Maravi_Kingdom_map_c._1650s.svg.png)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o nyasaland-historical.jpg https://upload.wikimedia.org/wikipedia/commons/1/1a/%22Taking_Loads_up_from_the_Lake%22%2C_Malawi%2C_ca._1894-1904_%28imp-cswc-GB-237-CSWC47-LS5-1-038%29.jpg)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o bantu-expansion.png https://upload.wikimedia.org/wikipedia/commons/8/8a/Bantu_Phillipson.png)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o hominid-fossil.jpg https://upload.wikimedia.org/wikipedia/commons/b/b9/Homo_rudolfensis-KNM_ER_1470.jpg)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o maravi-empire.png https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Maravi_Kingdom_map_c._1650s.svg/960px-Maravi_Kingdom_map_c._1650s.svg.png)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o nyasaland-historical.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/%22Taking_Loads_up_from_the_Lake%22%2C_Malawi%2C_ca._1894-1904_%28imp-cswc-GB-237-CSWC47-LS5-1-038%29.jpg/1024px-thumbnail.jpg)",
+      "Bash(curl -sL -A 'Mozilla/5.0 \\(compatible; YellowFieldTrip/1.0; +https://yellow.africa\\)' -o malawi-solar-future.jpg https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Mounting_of_solar_panel_in_Masewe%2C_Malawi.jpg/1024px-Mounting_of_solar_panel_in_Masewe%2C_Malawi.jpg)",
+      "Bash(npm run *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
     ]
   }
 }
