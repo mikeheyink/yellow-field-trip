@@ -26,7 +26,7 @@ export const customers: Customer[] = [
     ],
     promptForVisitors:
       'Ask Dezilata about her son and Chancellor College — and what an extra two hours of pre-dawn work means for the family.',
-    photo: '/images/customer-dezilata.png',
+    photo: '/images/customer-dezilata.jpg',
   },
   {
     slug: 'zakeyu',
@@ -38,7 +38,7 @@ export const customers: Customer[] = [
     hero: {
       stat: {
         value: 'MWK 18,000',
-        label: 'every 3 months on batteries — gone',
+        label: 'every 3 months on torch batteries — gone',
       },
     },
     stats: [
@@ -54,7 +54,34 @@ export const customers: Customer[] = [
     ],
     promptForVisitors:
       'Ask Zakeyu what the old car-battery setup was actually like — and what predictable monthly cost has freed up for the family.',
-    photo: '/images/customer-zakeyu.png',
+    photo: '/images/customer-zakeyu.jpg',
+  },
+  {
+    slug: 'sajeni',
+    firstName: 'Sajeni',
+    fullName: 'Sajeni',
+    role: 'customer',
+    location: 'TA Malili',
+    agentSlug: 'lawrence',
+    hero: {
+      stat: { value: '30–40', label: 'customers a day at his solar-powered cinema' },
+    },
+    stats: [
+      { label: 'Household', value: 'Father' },
+      { label: 'Yellow customer since', value: 'June 2022' },
+      { label: 'Product', value: 'BioLite 5000t' },
+      { label: 'Income', value: 'Farming + TV business' },
+    ],
+    story: [
+      'Sajeni is a farmer living in a remote area who has turned his solar investment into a reliable source of income for his family.',
+      'After successfully paying off his first solar unit, he later invested in a 32-inch TV kit. In a community where televisions are rare, Sajeni saw an opportunity and started a small business showing movies and football matches using solar power.',
+      'Today he attracts an average of 30–40 customers a day, each paying around MWK 200 for entry — generating a steady income with very low operating costs. The business has become a dependable source of livelihood for his household.',
+      'Beyond income, the impact has been deeply personal. Through the earnings from the business, Sajeni has been able to support his son through college — something he once worried would be financially impossible.',
+      'What started as a household solar purchase has grown into a sustainable business supporting both his family’s income and his child’s education.',
+    ],
+    promptForVisitors:
+      'Ask Sajeni who fills the room on a Champions League night — and what the takings from a single match can pay for.',
+    photo: '/images/customer-sajeni.jpg',
   },
   {
     slug: 'hendrix',
@@ -79,7 +106,8 @@ export const customers: Customer[] = [
     ],
     promptForVisitors:
       'Ask Hendrix what it felt like to make the final payment — and what owning the system outright has meant since.',
-    photo: '/images/customer-hendrix.png',
+    photo: '/images/customer-hendrix.jpg',
+    hidden: true,
   },
   {
     slug: 'memory',
@@ -94,7 +122,7 @@ export const customers: Customer[] = [
     stats: [
       { label: 'Household', value: 'Family of 7' },
       { label: 'Yellow customer since', value: 'January 2024' },
-      { label: 'Product', value: 'BioLite 620' },
+      { label: 'Product', value: 'BioLite 620 (repo resale)' },
       { label: 'Income', value: 'Farmer (tomato)' },
     ],
     story: [
@@ -104,6 +132,7 @@ export const customers: Customer[] = [
     ],
     promptForVisitors:
       'Ask Memory about the child who just made it to secondary school — and what study time looked like before the solar unit.',
+    photo: '/images/customer-memory.jpg',
   },
   {
     slug: 'john',
@@ -128,9 +157,12 @@ export const customers: Customer[] = [
     ],
     promptForVisitors:
       'Ask John what hour his shop now stays open until — and what changed for customers when he stopped closing at sunset.',
-    photo: '/images/customer-john.png',
+    photo: '/images/customer-john.jpg',
+    hidden: true,
   },
 ];
 
 export const customerBySlug = (slug: string) =>
   customers.find((c) => c.slug === slug);
+
+export const visibleCustomers = customers.filter((c) => !c.hidden);

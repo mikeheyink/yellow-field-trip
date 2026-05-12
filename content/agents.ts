@@ -7,10 +7,8 @@ export const agents: Agent[] = [
     fullName: 'Stanford Keara',
     role: 'agent',
     location: 'TA Chitukula, Lilongwe',
-    hero: { stat: { value: '1,186', label: 'sales since 2022' } },
+    hero: { stat: { value: '1,186', label: 'customers since 2022' } },
     stats: [
-      { label: 'Total sales', value: '1,186' },
-      { label: 'Customers enabled', value: '29%' },
       { label: 'Years with Yellow', value: '3 years' },
       { label: 'Other income', value: 'Security guard, farming' },
     ],
@@ -21,7 +19,7 @@ export const agents: Agent[] = [
     ],
     promptForVisitors:
       'Ask Stanford how the first year felt — and what changed when the referrals started coming.',
-    photo: '/images/agent-stanford.png',
+    photo: '/images/agent-stanford.jpg',
   },
   {
     slug: 'lawrence',
@@ -29,10 +27,8 @@ export const agents: Agent[] = [
     fullName: 'Lawrence Phiri',
     role: 'agent',
     location: 'TA Malili, Lilongwe Southwest',
-    hero: { stat: { value: '747', label: 'sales over 4 years' } },
+    hero: { stat: { value: '747', label: 'customers over 4 years' } },
     stats: [
-      { label: 'Total sales', value: '747' },
-      { label: 'Customers enabled', value: '17%' },
       { label: 'Years with Yellow', value: '4 years' },
       { label: 'Other income', value: 'Poultry, stationery shop' },
     ],
@@ -43,7 +39,7 @@ export const agents: Agent[] = [
     ],
     promptForVisitors:
       'Ask Lawrence what he started first — the poultry, the shop, or the farming — and how Yellow income made each one possible.',
-    photo: '/images/agent-lawrence.png',
+    photo: '/images/agent-lawrence.jpg',
   },
 ];
 
