@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { journey, tripDate } from '@/content/journey';
@@ -22,13 +23,34 @@ export default function JourneyIndex() {
           journey.
         </h1>
         <p className="mt-3 max-w-prose text-muted">
-          Today we will meet two Yellow agents, four of their customers — after a visit to Yellow&apos;s Warehouse.
+          Today we will meet two Yellow agents and four of their customers — after a visit to Yellow&apos;s warehouse.
         </p>
       </header>
 
       <ol className="mt-6 space-y-3">
         {journey.map((item, i) => {
           if (item.kind === 'chapter') return null;
+
+          const isDezilata = item.kind === 'stop' && item.slug === 'dezilata';
+          const tipsCard = isDezilata ? (
+            <li key={`tips-${i}`}>
+              <Link
+                href="/visiting"
+                className="group flex items-center gap-3 rounded-2xl bg-yellow/20 px-4 py-3 ring-1 ring-yellow/40 transition-colors hover:bg-yellow/30"
+              >
+                <Chevrons className="h-3 w-10 shrink-0" tone="ink" />
+                <div className="flex-1">
+                  <p className="text-[10px] uppercase tracking-[0.25em] text-ink/70">
+                    Some practical tips
+                  </p>
+                  <p className="mt-0.5 font-display text-base leading-snug text-ink">
+                    A short note before the doorstep.
+                  </p>
+                </div>
+                <span aria-hidden className="text-ink/60">→</span>
+              </Link>
+            </li>
+          ) : null;
 
           if (item.kind === 'inter') {
             const isDrive = item.title.toLowerCase().includes('drive') ||
@@ -62,7 +84,7 @@ export default function JourneyIndex() {
 
           const stopMeta = stopMetaFor(item.slug);
           const badge = badgeFor(item.slug);
-          return (
+          const stopLi = (
             <li key={i}>
               <Link
                 href={`/journey/${item.slug}`}
@@ -101,6 +123,14 @@ export default function JourneyIndex() {
                 </div>
               </Link>
             </li>
+          );
+          return tipsCard ? (
+            <Fragment key={`grp-${i}`}>
+              {tipsCard}
+              {stopLi}
+            </Fragment>
+          ) : (
+            stopLi
           );
         })}
       </ol>

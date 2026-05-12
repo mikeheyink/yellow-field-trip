@@ -90,6 +90,7 @@ export default async function StopPage({
         stats={a.stats}
         story={a.story}
         prompt={a.promptForVisitors}
+        showPhrases
         next={next}
       />
     );
@@ -108,6 +109,7 @@ export default async function StopPage({
       stats={c.stats}
       story={c.story}
       prompt={c.promptForVisitors}
+      showPhrases
       afterStats={
         agent ? (
           <Link
@@ -157,6 +159,7 @@ function Detail({
   story,
   prompt,
   afterStats,
+  showPhrases,
   next,
 }: {
   eyebrow: string;
@@ -169,6 +172,7 @@ function Detail({
   story: string[];
   prompt?: string;
   afterStats?: React.ReactNode;
+  showPhrases?: boolean;
   next: string | null;
 }) {
   return (
@@ -211,6 +215,27 @@ function Detail({
         {title}
       </h1>
       <p className="mt-1 text-sm text-muted">{location}</p>
+
+      {showPhrases && (
+        <Link
+          href="/visiting"
+          className="mt-5 flex items-center gap-3 rounded-2xl bg-yellow/15 px-4 py-3 ring-1 ring-yellow/30 transition-colors hover:bg-yellow/25"
+        >
+          <div className="flex-1">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-ink/60">
+              A few words
+            </p>
+            <p className="mt-1 font-display text-base leading-snug">
+              <span className="text-ink">Muli bwanji?</span>
+              <span className="text-ink/50"> · </span>
+              <span className="text-ink">Zikomo.</span>
+            </p>
+          </div>
+          <span aria-hidden className="text-ink/50 text-xs uppercase tracking-wider">
+            More →
+          </span>
+        </Link>
+      )}
 
       {heroQuote && (
         <blockquote className="mt-7 border-l-2 border-yellow pl-4 font-display text-2xl leading-snug">

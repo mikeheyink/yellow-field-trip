@@ -15,7 +15,7 @@ export type MalawiSection = {
 export const malawi = {
   headline: 'A country at the southern end of the rift.',
   intro:
-    'Most people who fly into Lilongwe come for one of two reasons: the lake, or the people. Both are older than they look. What follows is a short walk through the place you have just landed in.',
+    'Most people who fly into Lilongwe come for one of two reasons: the lake, or the people. Both are older than they look. What follows is a short walk through where you have just landed.',
 
   hero: {
     src: '/images/malawi/mount-mulanje.jpg',
@@ -58,7 +58,7 @@ export const malawi = {
       title: 'A name that means flames.',
       body: [
         'Five thousand years ago, in what is now the borderland of Cameroon and Nigeria, a group of farmers began to move. The Bantu expansion is the largest human migration in pre-modern history. Their descendants today — about 350 million people, roughly one in four Africans — speak languages descended from that single root.',
-        'They reached the rift around two thousand years ago, bringing iron, pottery, and fire. By 1480 they had founded the Maravi confederacy. Malaŵí means flames in Chewa: iron kilns at night, or the lake at sunset. The country still carries the word.',
+        'They reached the rift around two thousand years ago, bringing iron, pottery, and fire. By 1480 they had founded the Maravi confederacy. Malaŵí means ‘flames’ in Chewa: iron kilns at night, or the lake at sunset. The country still carries the word.',
       ],
       image: {
         src: '/images/malawi/lake-malawi-tropical.jpg',

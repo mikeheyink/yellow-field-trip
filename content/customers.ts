@@ -19,8 +19,8 @@ export const customers: Customer[] = [
       { label: 'Income', value: 'Small-scale brewing' },
     ],
     story: [
-      'Dezilata is a small-scale entrepreneur supporting a family of four. Before, her family relied on a small solar torch for lighting — unreliable, and it eventually broke while her son was preparing for his Form 4 exams. That pushed her to invest in a proper solar system.',
-      'With reliable lighting, her son was able to study effectively, perform well in his exams, and has now been selected to attend Chancellor College.',
+      'Dezilata is a small-scale entrepreneur supporting a family of four. Before, her family relied on a small solar torch — unreliable, and one that eventually broke while her son was preparing for his Form 4 exams. That pushed her to invest in a proper solar system.',
+      'With reliable lighting, her son was able to study effectively and perform well in his exams. He has since been selected to attend Chancellor College.',
       'Dezilata runs a kachasu brewing business. She used to struggle with poor lighting — finishing late at night and losing valuable selling time. Since getting the solar unit, she now starts work as early as 3 AM and completes production in time to sell the same day, significantly improving her income.',
       'The added stability has allowed her to rent farmland for maize and consistently pay school fees for her children, all while running her household independently.',
     ],
