@@ -15,6 +15,7 @@ export type Customer = {
   story: string[];
   promptForVisitors?: string;
   photo?: string;
+  hidden?: boolean;
 };
 
 export type Agent = {

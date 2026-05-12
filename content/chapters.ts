@@ -12,7 +12,7 @@ export const chapters: Chapter[] = [
       'Established PAYGO Solar companies had written off Malawi as too poor for the model to work. But Maya and Mike saw something others missed: low-income households were already spending heavily on dirty, unreliable energy. If Yellow could operate lean enough, solar could be both affordable and commercially viable.',
       'In March 2018, Mike raised the capital, Maya readied the team, and Yellow began work in Malawi.',
     ],
-    photo: '/images/chapter-maya.png',
+    photo: '/images/chapter-maya.jpg',
   },
   {
     number: '02',
@@ -29,7 +29,7 @@ export const chapters: Chapter[] = [
       'Solar penetration close to 0%',
       'Malawi: the lowest-income country in the world',
     ],
-    photo: '/images/chapter-launch.png',
+    photo: '/images/chapter-launch.jpg',
   },
   {
     number: '03',
@@ -41,7 +41,7 @@ export const chapters: Chapter[] = [
       'Inspired by tech-enabled platforms, Yellow turned manual processes into digital workflows — from agent management and customer onboarding to payments, service, and credit monitoring.',
       'Automation lowered costs, improved execution, and helped Yellow find the right price point. Sales grew from 40 in six months to 40 per day. Service improved, and the agent-led credit model drove near-universal repayment.',
     ],
-    photo: '/images/chapter-digital.png',
+    photo: '/images/chapter-digital.jpg',
   },
   {
     number: '04',
@@ -56,7 +56,7 @@ export const chapters: Chapter[] = [
       '#1 brand — a household name in rural Malawi by 2022',
       'Profitable within one year of operating',
     ],
-    photo: '/images/chapter-acumen.png',
+    photo: '/images/chapter-acumen.jpg',
   },
   {
     number: '05',

@@ -114,7 +114,7 @@ export const malawi = {
         'Yellow exists to put both in Malawian hands.',
       ],
       image: {
-        src: '/images/customer-typical-3.png',
+        src: '/images/customer-typical-3.jpg',
         alt: 'A Yellow customer in Malawi with a solar home kit',
         credit: 'Yellow',
         objectPosition: 'center top',

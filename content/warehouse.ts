@@ -23,5 +23,5 @@ export const warehouse: Warehouse = {
   team: ['Tionge', 'Dan', 'Precious', 'Kondwani', 'Prince', 'Kelvin'],
   promptForVisitors:
     'Ask Tionge what happens to a unit that comes back broken — the journey from repo to resale tells you most of what you need to know about the model.',
-  photo: '/images/warehouse-team.png',
+  photo: '/images/warehouse-team.jpg',
 };

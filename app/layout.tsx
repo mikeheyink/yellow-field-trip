@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { NavBar } from '@/components/NavBar';
+import { PasswordGate } from '@/components/PasswordGate';
 
 export const metadata: Metadata = {
   title: 'Yellow × Acumen — Field Trip',
@@ -22,10 +23,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="min-h-dvh">
-        <main className="mx-auto w-full max-w-[480px] px-5 pb-28 pt-6">
-          {children}
-        </main>
-        <NavBar />
+        <PasswordGate>
+          <main className="mx-auto w-full max-w-[480px] px-5 pb-28 pt-6">
+            {children}
+          </main>
+          <NavBar />
+        </PasswordGate>
       </body>
     </html>
   );

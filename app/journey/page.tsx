@@ -22,7 +22,7 @@ export default function JourneyIndex() {
           journey.
         </h1>
         <p className="mt-3 max-w-prose text-muted">
-          Today we will meet two Yellow agents, five of their customers — after a visit to Yellow&apos;s Warehouse.
+          Today we will meet two Yellow agents, four of their customers — after a visit to Yellow&apos;s Warehouse.
         </p>
       </header>
 
@@ -119,7 +119,7 @@ export default function JourneyIndex() {
           href="/memento"
           className="mt-4 inline-flex items-center gap-2 text-sm text-paper/90"
         >
-          Open the memento
+          Open
           <span aria-hidden>→</span>
         </Link>
       </div>
