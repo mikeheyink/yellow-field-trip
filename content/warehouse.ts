@@ -4,7 +4,7 @@ export const warehouse: Warehouse = {
   slug: 'warehouse',
   title: 'The Yellow Warehouse',
   role: 'warehouse',
-  location: 'Area 28, Lilongwe — the CDC',
+  location: 'Area 28, Lilongwe',
   hero: {
     quote: 'Where every Yellow unit begins, returns, and begins again.',
   },
@@ -18,7 +18,7 @@ export const warehouse: Warehouse = {
     'This is Yellow’s Central Distribution Centre in Malawi — a key part of how we sustain access for our customers.',
     'Beyond dispatching stock to agents, this is where we receive returned units, assess and refurbish them, and prepare them for reintroduction into the market.',
     'It also houses our testing, workshop, and e-waste processes, which help us maintain quality, manage costs, and operate responsibly.',
-    'Tionge, our Stock Pillar Head, together with her team Dan, Precious, Kondwani, Prince and Kelvin, will walk you through how this works in practice.',
+    'Tionge, our Stock Pillar Head, together with her team — Dan, Precious, Kondwani, Prince and Kelvin — will walk you through how this works in practice.',
   ],
   team: ['Tionge', 'Dan', 'Precious', 'Kondwani', 'Prince', 'Kelvin'],
   promptForVisitors:

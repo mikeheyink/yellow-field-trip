@@ -39,7 +39,7 @@ export const chapters: Chapter[] = [
     body: [
       'Yellow’s breakthrough came from digitising the operating model.',
       'Inspired by tech-enabled platforms, Yellow turned manual processes into digital workflows — from agent management and customer onboarding to payments, service, and credit monitoring.',
-      'Automation lowered costs, improved execution, and helped Yellow find the right price point. Sales grew from 40 in six months to 40 per day. Service improved, and the agent-led credit model drove near-universal repayment.',
+      'Automation lowered costs, improved execution, and helped Yellow find the right price point. Sales grew from 40 in six months to 40 per day. Service improved and the agent-led credit model drove near-universal repayment.',
     ],
     photo: '/images/chapter-digital.jpg',
   },
@@ -49,12 +49,12 @@ export const chapters: Chapter[] = [
     title: 'Scale',
     hero: { stat: '1 in 9', statLabel: 'households served by Yellow' },
     body: [
-      'When the innovation came, so did the customers. In five years Yellow electrified 350,000 households — equivalent to all connections from the national grid.',
+      'When the innovation came, so did the customers. In five years Yellow electrified 550,000 households — equivalent to all connections from the national grid.',
     ],
     bullets: [
       'NPS 83 — exceptional customer satisfaction by 2022',
       '#1 brand — a household name in rural Malawi by 2022',
-      'Profitable within one year of operating',
+      'Profitable within one year of launch',
     ],
     photo: '/images/chapter-acumen.jpg',
   },
@@ -65,8 +65,8 @@ export const chapters: Chapter[] = [
     hero: { stat: '2022 – 2025', statLabel: 'capital evaporated from emerging markets' },
     body: [
       'February 2022: Russia invades Ukraine. March 2022: the Fed begins raising interest rates. From 2022 to 2024, emerging-market capital dries up and the Kwacha depreciates sharply. By 2025, lenders stop taking Kwacha risk altogether.',
-      'Yellow had hedged its Kwacha exposure, but by 2025 lenders were no longer willing to take local currency risk. Without working capital, the Malawi business could not order stock. Agents soon ran out of products to sell.',
-      'A business that had proven its model now faced a liquidity crisis.',
+      'Yellow has hedged its Kwacha exposure, but by 2025 lenders are no longer willing to take local currency risk. Without working capital, the Malawi business cannot order stock. Agents soon run out of products to sell.',
+      'A business that has proven its model now faces a liquidity crisis.',
     ],
     photo: '/images/chapter-crisis.jpg',
   },
