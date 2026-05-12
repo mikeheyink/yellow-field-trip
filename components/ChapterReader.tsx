@@ -157,7 +157,11 @@ function ChapterCard({ chapter: c }: { chapter: Chapter }) {
               isAcumen ? 'bg-yellow text-ink' : 'bg-yellow text-ink'
             }`}
           >
-            <p className="font-display text-[2.2rem] leading-none">
+            <p
+              className={`font-display leading-none ${
+                c.hero.stat.length > 10 ? 'text-[1.3rem]' : 'text-[2.2rem]'
+              }`}
+            >
               {c.hero.stat}
             </p>
             {c.hero.statLabel && (

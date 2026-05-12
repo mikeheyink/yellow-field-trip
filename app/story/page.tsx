@@ -35,13 +35,13 @@ export default function StoryIndex() {
                     : 'border-rule bg-white hover:border-ink'
                 }`}
               >
-                <div className="relative h-28 w-28 shrink-0 bg-paper">
+                <div className="relative h-24 w-24 shrink-0 bg-paper">
                   {c.photo ? (
                     <Image
                       src={c.photo}
                       alt=""
                       fill
-                      sizes="112px"
+                      sizes="96px"
                       className="object-cover"
                     />
                   ) : (
@@ -64,15 +64,8 @@ export default function StoryIndex() {
                   >
                     Chapter {c.number}
                   </p>
-                  <p className="mt-0.5 font-display text-lg leading-snug">
+                  <p className="mt-1 font-display text-lg leading-snug">
                     {c.title}
-                  </p>
-                  <p
-                    className={`mt-1.5 font-display text-base ${
-                      isAcumen ? 'text-paper/80' : 'text-ink/80'
-                    }`}
-                  >
-                    {c.hero.stat}
                   </p>
                 </div>
               </Link>
