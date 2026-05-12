@@ -14,7 +14,7 @@ export type MalawiSection = {
 export const malawi = {
   headline: 'A country at the southern end of the rift.',
   intro:
-    'Most people who fly into Lilongwe come for one of two reasons: the lake, or the people. Both are older than they look. What follows is a short walk through the place you have just landed in — five minutes, seven sections, four billion years of context lightly compressed.',
+    'Most people who fly into Lilongwe come for one of two reasons: the lake, or the people. Both are older than they look. What follows is a short walk through the place you have just landed in.',
 
   hero: {
     src: '/images/malawi/lake-from-space.jpg',
@@ -29,7 +29,7 @@ export const malawi = {
       title: 'Born of the Rift.',
       body: [
         'Tens of millions of years ago, the African plate began to tear itself in two. The wound is still open. It runs from Ethiopia down through Kenya and Tanzania, and at its southern end it cradles a long, deep finger of water — Lake Malawi.',
-        'Six hundred kilometres long, seven hundred metres deep, old enough to have grown its own evolution. More than a thousand species of cichlid fish live here and nowhere else on Earth. The country is the lake\'s western shore, made of the same geological act.',
+        'Six hundred kilometres long, seven hundred metres deep, old enough to have evolved a world of its own. More than a thousand species of cichlid fish live here and nowhere else on Earth. The country is the lake\'s western shore, made of the same geological act.',
       ],
       image: {
         src: '/images/malawi/rift-diagram.png',
@@ -60,8 +60,8 @@ export const malawi = {
         'They reached the rift around two thousand years ago, bringing iron, pottery, and fire. By 1480 they had founded the Maravi confederacy. Malaŵí means flames in Chewa: iron kilns at night, or the lake at sunset. The country still carries the word.',
       ],
       image: {
-        src: '/images/malawi/bantu-expansion.png',
-        alt: 'Bantu expansion across Africa',
+        src: '/images/malawi/lake-malawi-sunset.jpg',
+        alt: 'Lake Malawi at sunset',
         credit: 'Wikimedia Commons',
       },
     },
@@ -74,15 +74,15 @@ export const malawi = {
         'From 1953 it was bound, against its will, into a federation with the Rhodesias. On 6 July 1964 it walked out as Malawi, with Hastings Kamuzu Banda as its first leader. He would hold it tightly — a one-party state until 1994, when Malawians voted, peacefully, for something else.',
       ],
       image: {
-        src: '/images/malawi/nyasaland-historical.jpg',
-        alt: 'Nyasaland, colonial era',
-        credit: 'Library of Congress / public domain',
+        src: '/images/malawi/nyasaland-steamer.jpg',
+        alt: 'Colonial-era steamer on Lake Nyasa',
+        credit: 'Wikimedia Commons / public domain',
       },
     },
     {
       number: '05',
       kicker: 'Structure',
-      title: 'The shape of the country.',
+      title: 'The chief still holds the land.',
       body: [
         'Three regions. Twenty-eight districts. Around two hundred and fifty Traditional Authorities, each a chief with real power over customary land and law. Lilongwe is the capital; Blantyre is where the money moves. But rural Malawi — most of Malawi — is governed at the level of the chief, the village headman, the elder.',
         'Tradition is not a museum here. The Gule Wamkulu, the great masked dance of the Chewa, was inscribed on the UNESCO list of intangible heritage in 2008. It is also, this weekend, somewhere being danced.',
@@ -102,18 +102,13 @@ export const malawi = {
         'A Malawian born today will live a quarter-century longer than one born in 1990, and is six times more likely to see their fifth birthday. Incomes remain low. The dignity does not.',
         'There are 22 million Malawians today. The UN\'s medium projection is 37 million by 2050, around 60 million by 2100. Half of Malawians are under eighteen. A young country, getting larger before it gets older.',
       ],
-      image: {
-        src: '/images/malawi/malawi-classroom.jpg',
-        alt: 'A classroom in Malawi',
-        credit: 'USAID Malawi',
-      },
     },
     {
       number: '07',
       kicker: 'Tomorrow',
       title: 'Leapfrog.',
       body: [
-        'The luckiest thing about being late is that you skip what didn\'t work. Malawi never built a continent of landlines; it went straight to mobile. It is not building a continent of bank branches; it is going straight to phones that hold money. It is not waiting for the grid to crawl out from Lilongwe; it is going straight to a panel on the roof.',
+        'The luckiest thing about being late is that you skip what didn\'t work. Malawi never wired itself for landlines; it went straight to mobile. It is not building out bank branches; it is going straight to phones that hold money. It is not waiting for the grid to crawl out from Lilongwe; it is going straight to a panel on the roof.',
         'A child born this year in TA Chitukula will grow up with a solar light at her desk, a phone in her pocket, and a connection to every classroom and library on Earth. The frontier of what a young Malawian can learn, build, sell, and become is now a function of two things: light, and a signal.',
         'Yellow exists to install the first. The second is coming faster than anyone expected.',
       ],
