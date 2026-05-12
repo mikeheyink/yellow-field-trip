@@ -125,6 +125,7 @@ export default function MalawiPage() {
                       fill
                       sizes="(max-width: 480px) 100vw, 480px"
                       className="object-cover"
+                      style={s.image.objectPosition ? { objectPosition: s.image.objectPosition } : undefined}
                     />
                   </div>
                   <figcaption className="pt-2 text-[10px] text-muted">

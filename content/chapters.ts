@@ -5,11 +5,11 @@ export const chapters: Chapter[] = [
     number: '01',
     slug: 'mayas-story',
     title: "Maya's Story",
-    hero: { stat: '10% → 0%', statLabel: 'with electric light at night, of which solar in 2018' },
+    hero: { stat: '< 1%', statLabel: 'households in Malawi with solar in 2018' },
     body: [
       'Growing up in East Africa, Maya Khonje-Stewart witnessed energy poverty first-hand. In 2012, she founded an NGO to promote solar in Malawi — but awareness alone could not solve the problem. She wanted to transform daily life for Malawian households.',
-      'Then she met Mike, a South African entrepreneur.',
-      'Established PAYGO companies had written off Malawi as too poor for the model to work. But Maya and Mike saw something others missed: low-income households were already spending heavily on dirty, unreliable energy. If Yellow could operate leanly enough, solar could be both affordable and commercially viable.',
+      "Then she met Mike, a South African entrepreneur who believed in commercial solutions to Africa's energy and connectivity challenges.",
+      'Established PAYGO Solar companies had written off Malawi as too poor for the model to work. But Maya and Mike saw something others missed: low-income households were already spending heavily on dirty, unreliable energy. If Yellow could operate lean enough, solar could be both affordable and commercially viable.',
       'In March 2018, Mike raised the capital, Maya readied the team, and Yellow began work in Malawi.',
     ],
     photo: '/images/chapter-maya.png',
@@ -35,7 +35,7 @@ export const chapters: Chapter[] = [
     number: '03',
     slug: 'the-digital-breakthrough',
     title: 'The Digital Breakthrough',
-    hero: { stat: '40 → 40/day', statLabel: 'sales in 6 months → customers per day' },
+    hero: { stat: '40 in 6 months → 40 / day' },
     body: [
       'Yellow’s breakthrough came from digitising the operating model.',
       'Inspired by tech-enabled platforms, Yellow turned manual processes into digital workflows — from agent management and customer onboarding to payments, service, and credit monitoring.',
@@ -47,7 +47,7 @@ export const chapters: Chapter[] = [
     number: '04',
     slug: 'scale',
     title: 'Scale',
-    hero: { stat: '350,000', statLabel: 'households electrified in five years' },
+    hero: { stat: '1 in 9', statLabel: 'households served by Yellow' },
     body: [
       'When the innovation came, so did the customers. In five years Yellow electrified 350,000 households — equivalent to all connections from the national grid.',
     ],
@@ -56,7 +56,7 @@ export const chapters: Chapter[] = [
       '#1 brand — a household name in rural Malawi by 2022',
       'Profitable within one year of operating',
     ],
-    photo: '/images/chapter-scale.png',
+    photo: '/images/chapter-acumen.png',
   },
   {
     number: '05',
@@ -68,6 +68,7 @@ export const chapters: Chapter[] = [
       'Yellow had hedged its Kwacha exposure, but by 2025 lenders were no longer willing to take local currency risk. Without working capital, the Malawi business could not order stock. Agents soon ran out of products to sell.',
       'A business that had proven its model now faced a liquidity crisis.',
     ],
+    photo: '/images/chapter-crisis.jpg',
   },
   {
     number: '06',
@@ -80,7 +81,7 @@ export const chapters: Chapter[] = [
       'That support helped Yellow keep 1,000 agents active, retain more than 100 team members, and protect the health of its credit portfolio.',
       'Today, Yellow Malawi is growing again — serving around 200 new customers per day and preparing to deliver against the World Bank’s energy-access programme targets.',
     ],
-    photo: '/images/chapter-acumen.png',
+    photo: '/images/acumen-logo.png',
   },
   {
     number: '07',
@@ -90,14 +91,15 @@ export const chapters: Chapter[] = [
     body: [
       'What began as Maya’s dream to bring clean, affordable energy to Malawian households has become a diversified, commercially sustainable business.',
       'By 2030, Yellow aims to serve 10 million customers — and build the commercial engine that makes life better for everyday African households.',
-      'With 1 million total customers expected this quarter, operations across seven African markets, and $80 million in funded solar and smartphone assets from an initial $3 million equity base, Yellow is entering its next phase of scale.',
+      'This quarter, Yellow will serve its one-millionth customer. It now operates across seven African markets and, from an initial $3 million equity base, has funded $80 million in solar and smartphone assets — entering its next phase of scale.',
       'Now becoming AI-native, Yellow is using technology to push prices down and service levels up.',
     ],
     bullets: [
-      '1M total customers — expected this quarter',
+      'Customer #1,000,000 — to be served this quarter',
       '7 African markets — diversified and profitable operations',
       '$3M equity → $80M funded life-changing assets',
     ],
+    photo: '/images/chapter-future.jpg',
   },
 ];
 

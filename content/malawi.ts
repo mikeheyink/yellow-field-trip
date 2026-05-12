@@ -8,6 +8,7 @@ export type MalawiSection = {
     alt: string;
     credit: string;
     fullBleed?: boolean;
+    objectPosition?: string;
   };
 };
 
@@ -17,9 +18,9 @@ export const malawi = {
     'Most people who fly into Lilongwe come for one of two reasons: the lake, or the people. Both are older than they look. What follows is a short walk through the place you have just landed in.',
 
   hero: {
-    src: '/images/malawi/lake-from-space.jpg',
-    alt: 'Lake Malawi seen from orbit',
-    credit: 'NASA / ISS Crew Earth Observations',
+    src: '/images/malawi/mount-mulanje.jpg',
+    alt: 'Mount Mulanje rising over tea fields',
+    credit: 'David Davies / Wikimedia Commons (CC BY-SA 2.0)',
   },
 
   sections: [
@@ -32,9 +33,9 @@ export const malawi = {
         'Six hundred kilometres long, seven hundred metres deep, old enough to have evolved a world of its own. More than a thousand species of cichlid fish live here and nowhere else on Earth. The country is the lake\'s western shore, made of the same geological act.',
       ],
       image: {
-        src: '/images/malawi/rift-diagram.png',
-        alt: 'The East African Rift Valley',
-        credit: 'USGS',
+        src: '/images/malawi/lake-from-space.jpg',
+        alt: 'Lake Malawi seen from orbit — the southern tip of the East African Rift',
+        credit: 'NASA / ISS Crew Earth Observations',
       },
     },
     {
@@ -60,9 +61,9 @@ export const malawi = {
         'They reached the rift around two thousand years ago, bringing iron, pottery, and fire. By 1480 they had founded the Maravi confederacy. Malaŵí means flames in Chewa: iron kilns at night, or the lake at sunset. The country still carries the word.',
       ],
       image: {
-        src: '/images/malawi/lake-malawi-sunset.jpg',
-        alt: 'Lake Malawi at sunset',
-        credit: 'Wikimedia Commons',
+        src: '/images/malawi/lake-malawi-tropical.jpg',
+        alt: 'Mumbo Island, Lake Malawi',
+        credit: 'Akerbeltz / Wikimedia Commons (CC BY-SA 4.0)',
       },
     },
     {
@@ -110,12 +111,13 @@ export const malawi = {
       body: [
         'The luckiest thing about being late is that you skip what didn\'t work. Malawi never wired itself for landlines; it went straight to mobile. It is not building out bank branches; it is going straight to phones that hold money. It is not waiting for the grid to crawl out from Lilongwe; it is going straight to a panel on the roof.',
         'A child born this year in TA Chitukula will grow up with a solar light at her desk, a phone in her pocket, and a connection to every classroom and library on Earth. The frontier of what a young Malawian can learn, build, sell, and become is now a function of two things: light, and a signal.',
-        'Yellow exists to install the first. The second is coming faster than anyone expected.',
+        'Yellow exists to put both in Malawian hands.',
       ],
       image: {
-        src: '/images/malawi/malawi-solar-future.jpg',
-        alt: 'A young Malawian with a phone and solar light',
-        credit: 'USAID Malawi',
+        src: '/images/customer-typical-3.png',
+        alt: 'A Yellow customer in Malawi with a solar home kit',
+        credit: 'Yellow',
+        objectPosition: 'center top',
       },
     },
   ] as MalawiSection[],
