@@ -31,20 +31,19 @@ export default function JourneyIndex() {
         {journey.map((item, i) => {
           if (item.kind === 'chapter') return null;
 
-          const isDezilata = item.kind === 'stop' && item.slug === 'dezilata';
-          const tipsCard = isDezilata ? (
-            <li key={`tips-${i}`}>
+          const hostsCard = item.kind === 'stop' && item.slug === 'warehouse' ? (
+            <li key={`hosts-${i}`}>
               <Link
-                href="/visiting"
+                href="/hosts"
                 className="group flex items-center gap-3 rounded-2xl bg-yellow/20 px-4 py-3 ring-1 ring-yellow/40 transition-colors hover:bg-yellow/30"
               >
                 <Chevrons className="h-3 w-10 shrink-0" tone="ink" />
                 <div className="flex-1">
                   <p className="text-[10px] uppercase tracking-[0.25em] text-ink/70">
-                    Some practical tips
+                    Meet your Yellow hosts
                   </p>
                   <p className="mt-0.5 font-display text-base leading-snug text-ink">
-                    A short note before the doorstep.
+                    The six of us travelling with you today.
                   </p>
                 </div>
                 <span aria-hidden className="text-ink/60">→</span>
@@ -52,23 +51,43 @@ export default function JourneyIndex() {
             </li>
           ) : null;
 
+          const afterWarehouseExtras = item.kind === 'stop' && item.slug === 'warehouse' ? (
+            <Fragment key={`post-wh-${i}`}>
+              <PlainDivider key={`post-wh-line-${i}`} />
+              <li key={`tips-${i}`}>
+                <Link
+                  href="/visiting"
+                  className="group flex items-center gap-3 rounded-2xl bg-yellow/20 px-4 py-3 ring-1 ring-yellow/40 transition-colors hover:bg-yellow/30"
+                >
+                  <Chevrons className="h-3 w-10 shrink-0" tone="ink" />
+                  <div className="flex-1">
+                    <p className="text-[10px] uppercase tracking-[0.25em] text-ink/70">
+                      Some practical tips
+                    </p>
+                    <p className="mt-0.5 font-display text-base leading-snug text-ink">
+                      A short note before the doorstep.
+                    </p>
+                  </div>
+                  <span aria-hidden className="text-ink/60">→</span>
+                </Link>
+              </li>
+            </Fragment>
+          ) : null;
+
+          const groupLabel = item.kind === 'stop' && item.slug === 'agent-stanford'
+            ? 'Group 1'
+            : item.kind === 'stop' && item.slug === 'agent-lawrence'
+              ? 'Group 2'
+              : null;
+
           if (item.kind === 'inter') {
-            const isDrive = item.title.toLowerCase().includes('drive') ||
-              item.title.toLowerCase().includes('back to') ||
-              item.title.toLowerCase().includes('lunch');
-            if (isDrive) {
-              return (
-                <li key={i} className="flex items-center gap-3 py-2 px-1">
-                  <span className="font-mono text-[11px] text-muted shrink-0 w-10">
-                    {item.time ?? ''}
-                  </span>
-                  <span className="h-px flex-1 bg-rule" style={{ backgroundImage: 'repeating-linear-gradient(to right, #d4d4cc 0, #d4d4cc 4px, transparent 4px, transparent 8px)', backgroundColor: 'transparent' }} />
-                  <span className="text-[11px] uppercase tracking-[0.2em] text-muted/70 shrink-0">
-                    {item.title}
-                  </span>
-                  <span className="h-px flex-1 bg-rule" style={{ backgroundImage: 'repeating-linear-gradient(to right, #d4d4cc 0, #d4d4cc 4px, transparent 4px, transparent 8px)', backgroundColor: 'transparent' }} />
-                </li>
-              );
+            const lower = item.title.toLowerCase();
+            const isHotel = lower.includes('hotel briefing');
+            const isBack = lower.includes('back to');
+            const isLunch = lower.includes('lunch') || lower.includes('drive');
+            if (isLunch) return null;
+            if (isHotel || isBack) {
+              return <PlainDivider key={i} />;
             }
             return (
               <li key={i} className="flex items-center gap-3 px-1 py-1 text-sm text-muted">
@@ -110,11 +129,6 @@ export default function JourneyIndex() {
                     <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] uppercase tracking-[0.15em] font-medium ${badge.classes}`}>
                       {badge.label}
                     </span>
-                    {item.time && (
-                      <span className="font-mono text-[11px] text-muted">
-                        {item.time}
-                      </span>
-                    )}
                   </div>
                   <p className="font-display text-lg leading-tight">{item.title}</p>
                   {item.subtitle && (
@@ -124,14 +138,18 @@ export default function JourneyIndex() {
               </Link>
             </li>
           );
-          return tipsCard ? (
-            <Fragment key={`grp-${i}`}>
-              {tipsCard}
-              {stopLi}
-            </Fragment>
-          ) : (
-            stopLi
-          );
+
+          if (hostsCard || afterWarehouseExtras || groupLabel) {
+            return (
+              <Fragment key={`grp-${i}`}>
+                {hostsCard}
+                {groupLabel && <GroupDivider label={groupLabel} />}
+                {stopLi}
+                {afterWarehouseExtras}
+              </Fragment>
+            );
+          }
+          return stopLi;
         })}
       </ol>
 
@@ -154,6 +172,26 @@ export default function JourneyIndex() {
         </Link>
       </div>
     </div>
+  );
+}
+
+function PlainDivider() {
+  return (
+    <li className="flex items-center gap-3 py-2 px-1">
+      <span className="h-px flex-1 bg-rule" style={{ backgroundImage: 'repeating-linear-gradient(to right, #d4d4cc 0, #d4d4cc 4px, transparent 4px, transparent 8px)', backgroundColor: 'transparent' }} />
+    </li>
+  );
+}
+
+function GroupDivider({ label }: { label: string }) {
+  return (
+    <li className="flex items-center gap-3 py-2 px-1">
+      <span className="h-px flex-1 bg-rule" style={{ backgroundImage: 'repeating-linear-gradient(to right, #d4d4cc 0, #d4d4cc 4px, transparent 4px, transparent 8px)', backgroundColor: 'transparent' }} />
+      <span className="text-[11px] uppercase tracking-[0.25em] text-muted shrink-0">
+        {label}
+      </span>
+      <span className="h-px flex-1 bg-rule" style={{ backgroundImage: 'repeating-linear-gradient(to right, #d4d4cc 0, #d4d4cc 4px, transparent 4px, transparent 8px)', backgroundColor: 'transparent' }} />
+    </li>
   );
 }
 
